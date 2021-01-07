@@ -14,7 +14,7 @@ mydb = mysql.connector.connect(
   database="asanio_api"
 )
 
-#mycursor = mydb.cursor()
+mycursor = mydb.cursor()
 
 sql = "INSERT INTO Chart_of_airport(ICAO_AIRPORT,Charts_type,Chart_name) VALUES (%s,%s,%s)"
 values = []
@@ -33,6 +33,6 @@ with os.scandir(folder) as listOfEntries:
 
 print(values)
 
-#mycursor.executemany(sql, values)
+mycursor.executemany(sql, values)
 
-#mydb.commit()
+mydb.commit()

@@ -30,7 +30,7 @@ my_list = os.listdir(folder)
 
 for airport in my_list :
     path  = airport
-    with os.scandir(folder + path) as listOfEntries:
+    with os.scandir(folder + '\\'+path) as listOfEntries:
         for entry in listOfEntries:
             # print all entries that are files
             if entry.is_file():
@@ -41,6 +41,6 @@ for airport in my_list :
 
 print(values)
 
-# mycursor.executemany(sql, values)
+mycursor.executemany(sql, values)
 
-# mydb.commit()
+mydb.commit()
