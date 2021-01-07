@@ -20,7 +20,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO link_chart(ICAO_AIRPORT,Charts_type,Chart_name) VALUES (%s,%s,%s)"
+sql = "INSERT INTO Chart_of_airport(ICAO_AIRPORT,Charts_type,Chart_name) VALUES (%s,%s,%s)"
 values = []
 
 my_list = os.listdir('Cartes')
