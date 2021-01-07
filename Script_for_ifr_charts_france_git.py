@@ -14,7 +14,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="mysql-asanio.alwaysdata.net",
   user="asanio_php",
-  password="",
+  password="]{jrcrmS{vRL48!<",
   database="asanio_api"
 )
 
@@ -23,12 +23,14 @@ mycursor = mydb.cursor()
 sql = "INSERT INTO Chart_of_airport(ICAO_AIRPORT,Charts_type,Chart_name) VALUES (%s,%s,%s)"
 values = []
 
-my_list = os.listdir('Cartes')
+folder = 'FRANCE\AIRAC-2020-12-31\html\eAIP\Cartes'
+
+my_list = os.listdir(folder)
 
 
 for airport in my_list :
     path  = airport
-    with os.scandir('Cartes/' + path) as listOfEntries:
+    with os.scandir(folder + path) as listOfEntries:
         for entry in listOfEntries:
             # print all entries that are files
             if entry.is_file():
@@ -39,6 +41,6 @@ for airport in my_list :
 
 print(values)
 
-mycursor.executemany(sql, values)
+# mycursor.executemany(sql, values)
 
-mydb.commit()
+# mydb.commit()
