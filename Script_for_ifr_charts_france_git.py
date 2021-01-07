@@ -14,7 +14,7 @@ import mysql.connector
 mydb = mysql.connector.connect(
   host="mysql-asanio.alwaysdata.net",
   user="asanio_php",
-  password="]{jrcrmS{vRL48!<",
+  password="",
   database="asanio_api"
 )
 
